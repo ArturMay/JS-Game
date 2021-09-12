@@ -1,17 +1,16 @@
 const cityName = ['москва', 'санкт-петербург', 'смоленск', 'алушта', 'геленджик', 'курск', 'казань', 'нижний новгород', 'архангельск', 'йошкар-ола'];
 let computerCityName = _.sample(cityName);
 let restCityName = cityName.filter((cityName) => computerCityName !== cityName); 
-console.log(restCityName);
 
 const exceptLetters = ['ь', 'ъ', 'Ы'];
 
 const getLastLetter = () => {
-    const getLastLetter = _.last(cityName);
-    if (exceptLetters.includes(lastLeter)) {
+    const lastLetter = _.last(cityName);
+    if (exceptLetters.includes(lastLetter)) {
         return cityName[cityName.length - 2]
     }
 
-    return lastLeter;
+    return lastLetter;
 };
 
 
@@ -30,7 +29,7 @@ while (true) {
 
     restCityName = restCityName.filter((cityName) => userCityName !== cityName);
     computerCityName = restCityName.find((cityName) => cityName[0] === getLastLetter(userCityName));
-    
+
     if (!computerCityName) {
         alert('Компьютер проиграл');
         break;
