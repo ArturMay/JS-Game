@@ -4,7 +4,7 @@ let restCityName = cityName.filter((cityName) => computerCityName !== cityName);
 
 const exceptLetters = ['ь', 'ъ', 'Ы'];
 
-const getLastLetter = () => {
+const getLastLetter = (cityName) => {
     const lastLetter = _.last(cityName);
     if (exceptLetters.includes(lastLetter)) {
         return cityName[cityName.length - 2]
